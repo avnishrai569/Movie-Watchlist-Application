@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  --darkblue: #012f47;
+  --lightblue: #019fe9;
+  --lightgrey: #232329;
+  --darkgrey: #17171a;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+.moviePage {
+  padding: 90px 0 0 0;
+  min-height: 100vh;
+  background-color: var(--lightgrey);
+}
+
+.container {
+  padding: 12px 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: var(--lightblue);
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+/* MovieCard */
+
+.movieCard {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  display: block;
+  background-color: var(--darkgrey);
+}
+
+.movieCard img {
+  width: 100%;
+  display: block;
+  background-color: var(--darkgrey);
+  color: white;
+}
+
+.movieCard .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.movieCard:hover .overlay {
+  border: 3px solid var(--lightblue);
+  border-radius: 15px;
+  transition: all 0.25s ease;
+}
+
+.innerCardControls {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 3px;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.movieCard:hover .innerCardControls {
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+/* Watched Watchlist */
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.count {
+  display: block;
+  padding: 5px 15px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 1000px;
+  background-color: var(--lightblue); 
+  color: var(--darkblue);
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+@media (min-width: 992px) {
+  .movieGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1800px) {
+  .movieGrid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.noMovies {
+  color: rgb(189, 189, 189);
+  font-size: 2rem;
+  margin-top: 20%;
+  text-align: center;
+}
