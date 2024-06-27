@@ -9,11 +9,12 @@ import { Add } from "./components/Add";
 import "./App.css";
 
 import { GlobalProvider } from "./context/GlobalState";
-
+//new
 function App() {
   return (
     <GlobalProvider>
       <Router>
+        
         <Nav />
         <Switch>
           <Route path="/watched">
